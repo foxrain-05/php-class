@@ -1,14 +1,11 @@
 <?php
 
-// 데이터베이스 연결
-$host = 'localhost';
-$dbname = 'todo_app';
-$username = 'root';
-$password = '1234';
+require 'config.php';
+session_start();
 
 try {
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8",
+        "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8",
         $username,
         $password
     );
@@ -16,9 +13,6 @@ try {
 } catch (PDOException $e) {
     die("DB 연결 실패: " . $e->getMessage());
 }
-
-// 세션 시작
-session_start();
 
 // 이미 로그인했으면 목록으로 이동
 if (isset($_SESSION['user_id'])) {
