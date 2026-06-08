@@ -4,7 +4,7 @@
 $host = 'localhost';
 $dbname = 'todo_app';
 $username = 'root';
-$password = '';
+$password = '1234';
 
 try {
     $pdo = new PDO(
@@ -138,6 +138,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         button:hover {
             background-color: #000080;
         }
+
+        .signup-link {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .signup-link:hover {
+            background-color: #388e3c;
+        }
   
         .error {
             color: #d32f2f;
@@ -187,6 +205,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
         <button type="submit">로그인하기</button>
     </form>
+
+    <a class="signup-link" href="register.php">회원가입</a>
   
     <div class="test-info">
         <strong>📝 테스트 계정</strong>

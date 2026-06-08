@@ -6,7 +6,7 @@
 $host = 'localhost';
 $dbname = 'todo_app';
 $username = 'root';
-$password = '';
+$password = '1234';
 
 try {
     // PDO = PHP Data Objects
