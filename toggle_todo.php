@@ -1,6 +1,25 @@
 <?php
 
 require 'config.php';
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+
+try {
+    $pdo = new PDO(
+        "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8",
+        $username,
+        $password
+    );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("DB 연결 실패: " . $e->getMessage());
+}
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header("Location: list_todos.php");
