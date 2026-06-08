@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-d
+
 <h1>✏️ TODO 수정</h1>
 
 <?php if ($error): ?>
