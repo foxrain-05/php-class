@@ -4,11 +4,7 @@
 $host = 'localhost';
 $dbname = 'todo_app';
 $username = 'root';
-<<<<<<< ours
-$password = '';
-=======
 $password = '1234';
->>>>>>> theirs
 
 try {
     $pdo = new PDO(
